@@ -1,0 +1,113 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Web3.0</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-01-03T20:42:10+09:00</updated>
+  <author>
+    <name></name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024  </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Dive into the real world: 0x01</title>
+    <link href="http://localhost:4000/posts/Enzyme-Finance-Vuln/" rel="alternate" type="text/html" title="Dive into the real world: 0x01" />
+    <published>2023-12-18T00:00:00+09:00</published>
+  
+    <updated>2024-01-03T19:44:26+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Enzyme-Finance-Vuln/</id>
+    <content src="http://localhost:4000/posts/Enzyme-Finance-Vuln/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="Smart Contract" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      개요
+
+2023년 3월 28일에 한 연구원에 의해서 Enyzeme Finance에서 취약점이 제보되었다. 해당 취약점은 Gas Station Network(GNS)라는 네트워크의 함수를 Enzyeme Finance에서 재정의하여 사용하는 과정에서 포워드 검증이 미흡하게 구현되어 발생했다.
+
+
+Enzyme Finance란
+
+Enzyme Finance은 이더리움기반의 온체인 자산 관리 프로토콜이다. 이 프로토콜을 이용하면 사용자는 암호화폐 및 기타 디지털 자산과 같은 다양한 자산을 이용하여 맞춤형 투자 전략을 생성, 관리 및 투자 등의 서비스를 이용할 수 있다. 또한 이 Enzyme는 GNS를 이용하여 사용자가 Gas Fee를 지불하지 않고, Ethereum 스마트 계약과 상호 작용할 수 있도록 한다.
+
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Basic knowledge of web3.0</title>
+    <link href="http://localhost:4000/posts/blockchain/" rel="alternate" type="text/html" title="Basic knowledge of web3.0" />
+    <published>2023-11-25T00:00:00+09:00</published>
+  
+    <updated>2024-01-03T19:44:26+09:00</updated>
+  
+    <id>http://localhost:4000/posts/blockchain/</id>
+    <content src="http://localhost:4000/posts/blockchain/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="Theory" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      개요
+
+오늘부터 바쁜 일들이 조금씩 끝나서 1년 동안 미루고 있던 web3.0 공부를 시작하려고 한다. 처음 보는 분야인 만큼 시간을 투자해서 기초를 튼튼히 다질 계획이다.
+
+
+블록체인이란
+
+
+
+블록체인은 쉽게 말해서 변조 방지를 위한 디지털 장부라고 볼 수 있다.  블록체인은 위와 같은 블록의 체인이며 블록 내에는 거래 내역 및 데이터들이 저장되고, 이 블록 내에 저장되는 데이터는 블록체인의 유형에 따라 다르다. 또한 이 블록체인은 중앙화로 구성되어 있는 은행과는 다르게 탈중앙화 되어 있다.
+
+
+
+중앙화의 경우에는 하나의 중앙 서버에 모든 데이터를 저장하고 있기 때문에 중앙 서버가 해킹 당하면 사용자의 데이터가 변조 되고 삭제될 수 있다. 그러나 탈중앙화의 경우 네트워크의 접속되어 있는 모든 노드가 ...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
