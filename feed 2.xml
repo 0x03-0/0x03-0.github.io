@@ -4,108 +4,19 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-06T12:38:49+09:00</updated>
+  <updated>2024-01-03T20:42:10+09:00</updated>
   <author>
-    <name>anonymous</name>
+    <name></name>
     <uri>http://localhost:4000/</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
-  <rights> © 2024 anonymous </rights>
+  <rights> © 2024  </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
-
-  
-  <entry>
-    <title>BMW Web3 CTF</title>
-    <link href="http://localhost:4000/posts/BMW-CTF/" rel="alternate" type="text/html" title="BMW Web3 CTF" />
-    <published>2024-01-03T00:00:00+09:00</published>
-  
-    <updated>2024-01-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/BMW-CTF/</id>
-    <content src="http://localhost:4000/posts/BMW-CTF/" />
-    <author>
-      <name>anonymous</name>
-    </author>
-
-  
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      개요
-
-
-  Introduction
-안녕하세요. BMW는 Break My Wall의 약자로 나의 벽을 깨부순다는 의미입니다. 나의 한계를 극복함과 동시에 우리가 WEB3 생태계의 진입장벽을 부수자는 의미를 함축하고 있습니다. BMW는 KITRI 차세대 보안리더 양성 프로그램 WHS 1기 프로젝트팀이며, WEB3의 취약점을 연구하고 워게임 사이트를 제작하는 프로젝트 주제로 활동하고 있습니다.
-CTF Purpose
-암호화폐, 코인과 같은 블록체인 기술을 기반으로 하는 디지털 화폐가 대중성을 갖게 되며, 자연스레 블록체인 보안성의 중요성이 강조되고 있습니다. 블록체인은 투명성과 분산성, 탈중앙화라는 특성을 기반으로 두기에 기존의 Web 2.0보다 강한 보안성이 보장되지만, 그럼에도 불구하고 블록체인의 세계에...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>2023 X-mas CTF (Alpha Hunter)</title>
-    <link href="http://localhost:4000/posts/Alpha-Hunter/" rel="alternate" type="text/html" title="2023 X-mas CTF (Alpha Hunter)" />
-    <published>2023-12-25T00:00:00+09:00</published>
-  
-    <updated>2023-12-25T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Alpha-Hunter/</id>
-    <content src="http://localhost:4000/posts/Alpha-Hunter/" />
-    <author>
-      <name>anonymous</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      개요
-
-Description
-알파벳을 모아 MERRY CHRISTMAS를 완성해 주세요!!
-
-[RPC Usage]
-RPC: http://host:port/rpc
-GET FLAG: curl -X GET http://host:port/flag
-
-[Account Information]
-address: 0x377CFaD82A885Ef59C9243f715F33752804B1126
-private key: 0xdba103874bd715cb05989d00d55f53743dbca7c13c77b2b901c4b6ae90232b5e
-balance: 1 ETH
-
-[Contract Information]
-Setup address: 0x3e8C8ec7F7a5A51a7B4509d2f4d534BB3bA040b1
-
-문제를 풀기 위해 ...
-    </summary>
-  
-
-  </entry>
 
   
   <entry>
@@ -113,7 +24,7 @@ Setup address: 0x3e8C8ec7F7a5A51a7B4509d2f4d534BB3bA040b1
     <link href="http://localhost:4000/posts/Enzyme-Finance-Vuln/" rel="alternate" type="text/html" title="Dive into the real world: 0x01" />
     <published>2023-12-18T00:00:00+09:00</published>
   
-    <updated>2023-12-18T00:00:00+09:00</updated>
+    <updated>2024-01-03T19:44:26+09:00</updated>
   
     <id>http://localhost:4000/posts/Enzyme-Finance-Vuln/</id>
     <content src="http://localhost:4000/posts/Enzyme-Finance-Vuln/" />
@@ -156,7 +67,7 @@ Enzyme Finance은 이더리움기반의 온체인 자산 관리 프로토콜이�
     <link href="http://localhost:4000/posts/blockchain/" rel="alternate" type="text/html" title="Basic knowledge of web3.0" />
     <published>2023-11-25T00:00:00+09:00</published>
   
-    <updated>2023-11-25T00:00:00+09:00</updated>
+    <updated>2024-01-03T19:44:26+09:00</updated>
   
     <id>http://localhost:4000/posts/blockchain/</id>
     <content src="http://localhost:4000/posts/blockchain/" />
