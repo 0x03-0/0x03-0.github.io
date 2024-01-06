@@ -64,10 +64,8 @@
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" href="/assets/img/eth.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Web3.0">
 <meta name="application-name" content="Web3.0">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -1409,6 +1407,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1424,6 +1433,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1595,9 +1626,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="8910 words"
+  title="9265 words"
 >
-  <em>49 min</em> read</span>
+  <em>51 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -2800,7 +2831,103 @@ rounds towards zero. This mean that int256(-5) / int256(2) == int256(-2).
 <hr />
 <h2 id="foundry"><span class="me-2">Foundry</span><a href="#foundry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>작성 예정 ..</p>
+<h3 id="forge-script"><span class="me-2">forge script</span><a href="#forge-script" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>forge-script - 스마트 계약을 스크립트로 실행하여 온체인으로 보낼 수 있는 트랜잭션을 구축할 수 있다.</p>
+
+<div class="language-zsh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>~/Desktop/web3.0/web3.0-foundry/test master<span class="k">*</span>
+❯ tree          
+<span class="nb">.</span>
+└── Solve.sol
+
+1 directory, 1 file
+
+~/Desktop/web3.0/web3.0-foundry/src master<span class="k">*</span>
+❯ tree
+<span class="nb">.</span>
+├── exploit.sol
+└── interfaces
+
+2 directories, 1 file
+</pre></td></tr></tbody></table></code></div></div>
+<p>나는 위와 같이 구성해서 사용한다. Solve.sol에서 exploit.sol 내에 있는 공격용 컨트랙트를 불러와서 사용한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>forge script --broadcast --rpc-url $RPC_URL --private-key $PRIVATE_KEY Solve -v
+</pre></td></tr></tbody></table></code></div></div>
+<p>명령어는 간단하게 위와 같이 사용한다. 미리 환경 변수로 rpc url과 private key를 등록한 이후에 사용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre>--broadcast
+    transactions을 브로드캐스트
+
+--skip-simulation
+    on-chain simulation을 건너뜀
+
+--target-contract contract_name
+    내가 실행하고 싶은 컨트랙트를 선택할 수 있음
+
+--with-gas-price price
+    가스 설정 가능
+
+--private-key raw_private_key
+    제공된 개인 키를 사용
+
+-v 
+    EVM의 상세 정보 출력 (v 개수마다 상세 정보가 다름)
+    - 2: 모든 테스트에 대한 로그를 출력
+    - 3: 실패한 테스트에 대한 실행 추적을 출력
+    - 4: 모든 테스트에 대한 실행 추적 및 실패한 테스트에 대한 설정 추적을 출력
+    - 5: 모든 테스트에 대한 실행 및 설정 추적을 출력
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="cast"><span class="me-2">cast</span><a href="#cast" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>작성 예정</p>
+
+<hr />
+<h2 id="web3ethersjs"><span class="me-2">web3/ethers.js</span><a href="#web3ethersjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>작성 예정</p>
 
   </div>
 
