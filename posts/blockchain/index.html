@@ -1763,9 +1763,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="9354 words"
+  title="9414 words"
 >
-  <em>51 min</em> read</span>
+  <em>52 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -3072,9 +3072,17 @@ rounds towards zero. This mean that int256(-5) / int256(2) == int256(-2).
 <p>작성 예정</p>
 
 <hr />
-<h2 id="web3ethersjs"><span class="me-2">web3/ethers.js</span><a href="#web3ethersjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="ethersjs"><span class="me-2">ethers.js</span><a href="#ethersjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>작성 예정</p>
+<ul>
+  <li>new ethers.Wallet(pvkey, rpc_url) // signer 생성</li>
+  <li>new ethers.Contract(contract_address, abi, signer) // 컨트랙트 생성</li>
+  <li>signer.sendTransaction({to:owner, value : 100000000000000}) // 이더 송금</li>
+  <li>provider.getBlockNumber() // 현재 블록 번호</li>
+  <li>ethers.utils.formatEther(string) // 출력을 wei 대신 ether로</li>
+  <li>ethers.utils.parseEther(string) // ether를 wei로 변환</li>
+  <li>getStorage(contract_address, slot) // slot 데이터 가져오기</li>
+</ul>
 
   </div>
 
