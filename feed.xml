@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-01-10T08:56:54+09:00</updated>
+  <updated>2024-01-30T09:54:39+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Real World CTF 6th (SafeBridge)</title>
+    <link href="http://localhost:4000/posts/RealWorld-CTF-6th/" rel="alternate" type="text/html" title="Real World CTF 6th (SafeBridge)" />
+    <published>2024-01-29T00:00:00+09:00</published>
+  
+    <updated>2024-01-29T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/RealWorld-CTF-6th/</id>
+    <content src="http://localhost:4000/posts/RealWorld-CTF-6th/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="CTF" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      개요
+
+Real World CTF에 웹3 문제 있길래 풀어봤다. SafeBridge 문제의 솔브 조건은 L1 -&amp;gt; L2 브리지에서 토큰 잔액을 빼내는 것이었다. 이더리움에서 L1 -&amp;gt; L2 브리지는 주로 두 가지 계층 간의 상호 작용을 용이하게 하는 기술을 가리킨다.
+
+contract Challenge {
+    address public immutable BRIDGE;
+    address public immutable MESSENGER;
+    address public immutable WETH;
+
+    constructor(address bridge, address messenger, address weth) {
+        BRIDGE = bridge;
+        MESSEN...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
