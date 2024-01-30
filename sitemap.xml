@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/posts/blockchain/</loc>
-<lastmod>2023-11-25T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/posts/Enzyme-Finance-Vuln/</loc>
 <lastmod>2023-12-18T00:00:00+09:00</lastmod>
 </url>
@@ -22,20 +18,17 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
-<lastmod>2024-01-30T09:54:39+09:00</lastmod>
+<lastmod>2024-01-30T10:00:53+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archives/</loc>
-<lastmod>2024-01-30T09:54:39+09:00</lastmod>
+<lastmod>2024-01-30T10:00:53+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/categories/theory/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/categories/smart-contract/</loc>
+<loc>http://localhost:4000/categories/bug-case/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/ctf/</loc>
