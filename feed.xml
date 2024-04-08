@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-02-02T12:19:00+09:00</updated>
+  <updated>2024-04-08T13:30:08+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,59 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Dreamhack CTF (ERC1337)</title>
+    <link href="http://localhost:4000/posts/ERC1337-DH/" rel="alternate" type="text/html" title="Dreamhack CTF (ERC1337)" />
+    <published>2024-04-07T00:00:00+09:00</published>
+  
+    <updated>2024-04-07T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ERC1337-DH/</id>
+    <content src="http://localhost:4000/posts/ERC1337-DH/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="CTF" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      개요
+
+ERC1337 문제는 Third Contract 분석을 통해서 에 구조를 파악하여 취약점을 악용하여 Owner가 가지고 있는 토큰을 탈취하는 문제이다.
+
+contract Level {
+    ERC1337 public token;
+    uint256 public solved;
+    
+    constructor() {
+        token = new ERC1337("DHT");
+    }
+
+    function solve() external {
+        if (token.balanceOf(address(this)) == 1) {
+            solved = 1;
+        }
+    }
+}
+
+ERC1337.sol 파일을 보면 Level이라는 컨트랙트 내에 solve()...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
