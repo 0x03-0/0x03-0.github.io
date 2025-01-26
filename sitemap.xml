@@ -21,12 +21,16 @@
 <lastmod>2024-04-07T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/posts/Remedy-CTF2525/</loc>
+<lastmod>2025-01-26T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
-<lastmod>2025-01-26T01:06:19+09:00</lastmod>
+<lastmod>2025-01-27T04:02:28+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archives/</loc>
-<lastmod>2025-01-26T01:06:19+09:00</lastmod>
+<lastmod>2025-01-27T04:02:28+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
@@ -36,5 +40,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/ctf/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
