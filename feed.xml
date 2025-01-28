@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-01-27T04:02:28+09:00</updated>
+  <updated>2025-01-28T22:20:49+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>Remedy CTF 2025</title>
-    <link href="http://localhost:4000/posts/Remedy-CTF2525/" rel="alternate" type="text/html" title="Remedy CTF 2025" />
+    <title>Remedy CTF 2025 (Diamond, Rich, Casino)</title>
+    <link href="http://localhost:4000/posts/Remedy-CTF2525/" rel="alternate" type="text/html" title="Remedy CTF 2025 (Diamond, Rich, Casino)" />
     <published>2025-01-26T00:00:00+09:00</published>
   
     <updated>2025-01-26T00:00:00+09:00</updated>
