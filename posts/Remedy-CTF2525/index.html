@@ -838,7 +838,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4061 words"
+  title="4039 words"
 >
   <em>22 min</em> read</span>
 
@@ -2346,7 +2346,7 @@ contract Solve is Script {
 
 <p>but i couldn’t win the gam. i just tried to keep calling the <code class="language-plaintext highlighter-rouge">bet()</code> function till i win 100 times. however as i told, our balances goes down when we lose the game, acrroding to this logic, we can’t keep playing the game because we have no our balance in casino.</p>
 
-<p>however if we’re gonna call the <code class="language-plaintext highlighter-rouge">revert()</code> function when we lose the game then play again? our balances not goes down so well able to keep playing it. it was a scenario ans seems nice. but states is revert to before transaction was performed if the <code class="language-plaintext highlighter-rouge">revert()</code> function is called while operating on EVM that i could not do it.</p>
+<p>however if we’re gonna call the <code class="language-plaintext highlighter-rouge">revert()</code> function when we lose the game then play again? our balances not goes down so well able to keep playing it. it was a scenario ans seems nice. but states is revert to before transaction was performed if the <code class="language-plaintext highlighter-rouge">revert()</code> function is called while operating on EVM so i could not do it.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -2443,7 +2443,7 @@ contract Callllll {
     }
 }
 </pre></td></tr></tbody></table></code></div></div>
-<p>after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. because  it’s always reverted so i was not able to keep playing.</p>
+<p>after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. because  it’s always reverted so i was not able to keep playing.</p>
 
 <p><a href="https://media.discordapp.net/attachments/1324169819637022723/1333987974991319080/2025-01-29_11.31.45.png?ex=679ae49d&amp;is=6799931d&amp;hm=c3093ab8ac0909d600eda04f2c2f80b19924b41a5cef235ec2b39c0f5aef2a96&amp;=&amp;format=webp&amp;quality=lossless&amp;width=2098&amp;height=516" class="popup img-link  shimmer"><img src="https://media.discordapp.net/attachments/1324169819637022723/1333987974991319080/2025-01-29_11.31.45.png?ex=679ae49d&amp;is=6799931d&amp;hm=c3093ab8ac0909d600eda04f2c2f80b19924b41a5cef235ec2b39c0f5aef2a96&amp;=&amp;format=webp&amp;quality=lossless&amp;width=2098&amp;height=516" alt="" loading="lazy"></a>
 he says if we call some function with the <code class="language-plaintext highlighter-rouge">.call()</code> function, only the transaction performed through <code class="language-plaintext highlighter-rouge">.call()</code> function is reverted.. so i wrote test code as above, when i called the <code class="language-plaintext highlighter-rouge">asdf1()</code> function, it was reverted before transaction was performed but when i call the <code class="language-plaintext highlighter-rouge">asdf11()</code> it was just reverted the transaction which performed via <code class="language-plaintext highlighter-rouge">.call()</code> function. so we can just exploit with this trick to get winning.</p>
