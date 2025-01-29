@@ -38,8 +38,8 @@
 <meta property="og:title" content="Remedy CTF 2025 (Diamond, Rich, Casino)" />
 <meta name="author" content="anonymous" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="i could solve only three easy solidity challs :/ hope will be better" />
-<meta property="og:description" content="i could solve only three easy solidity challs :/ hope will be better" />
+<meta name="description" content="i could solve only three easy solidity challs :/ but in the casino challenge, i was able to bypass the signature but not the bet() function. hope that i will be better" />
+<meta property="og:description" content="i could solve only three easy solidity challs :/ but in the casino challenge, i was able to bypass the signature but not the bet() function. hope that i will be better" />
 <link rel="canonical" href="http://localhost:4000/posts/Remedy-CTF2525/" />
 <meta property="og:url" content="http://localhost:4000/posts/Remedy-CTF2525/" />
 <meta property="og:site_name" content="Web3.0" />
@@ -48,7 +48,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Remedy CTF 2025 (Diamond, Rich, Casino)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"anonymous"},"dateModified":"2025-01-26T00:00:00+09:00","datePublished":"2025-01-26T00:00:00+09:00","description":"i could solve only three easy solidity challs :/ hope will be better","headline":"Remedy CTF 2025 (Diamond, Rich, Casino)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Remedy-CTF2525/"},"url":"http://localhost:4000/posts/Remedy-CTF2525/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"anonymous"},"dateModified":"2025-01-26T00:00:00+09:00","datePublished":"2025-01-26T00:00:00+09:00","description":"i could solve only three easy solidity challs :/ but in the casino challenge, i was able to bypass the signature but not the bet() function. hope that i will be better","headline":"Remedy CTF 2025 (Diamond, Rich, Casino)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Remedy-CTF2525/"},"url":"http://localhost:4000/posts/Remedy-CTF2525/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -564,6 +564,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -775,9 +838,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3622 words"
+  title="4061 words"
 >
-  <em>20 min</em> read</span>
+  <em>22 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -786,7 +849,7 @@
   </header>
 
   <div class="content">
-    <p>i could solve only three easy solidity challs :/ hope will be better</p>
+    <p>i could solve only three easy solidity challs :/ but in the casino challenge, i was able to bypass the signature but not the <code class="language-plaintext highlighter-rouge">bet()</code> function. hope that i will be better</p>
 
 <hr />
 <h2 id="diamoand-heist"><span class="me-2">Diamoand Heist</span><a href="#diamoand-heist" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -2280,6 +2343,112 @@ contract Solve is Script {
     }
 </pre></td></tr></tbody></table></code></div></div>
 <p>if we win a game, we can fill our balances to amount but this amount should smaller than our balance. so we should win almost 100 times to earn more than 99 ether. from now on, we should think how to always win because our balances goes down when we lose the game</p>
+
+<p>but i couldn’t win the gam. i just tried to keep calling the <code class="language-plaintext highlighter-rouge">bet()</code> function till i win 100 times. however as i told, our balances goes down when we lose the game, acrroding to this logic, we can’t keep playing the game because we have no our balance in casino.</p>
+
+<p>however if we’re gonna call the <code class="language-plaintext highlighter-rouge">revert()</code> function when we lose the game then play again? our balances not goes down so well able to keep playing it. it was a scenario ans seems nice. but states is revert to before transaction was performed if the <code class="language-plaintext highlighter-rouge">revert()</code> function is called while operating on EVM that i could not do it.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="rouge-code"><pre>// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity &gt;=0.8.2 &lt;0.9.0;
+
+contract ameeeen {
+    function bet(uint256 num) external returns (bool) {
+        if ((num % 2) == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+contract Callllll {
+    mapping(uint =&gt; bool) public balances;
+    ameeeen public am;
+    bool checkkkkkk;
+    
+    constructor() {
+        am = new ameeeen();
+    }
+
+    function asdf1() external {
+        for(uint i = 0; i &lt; 100; i++){
+            asdf2(i);
+        }
+    }
+
+    function asdf11() external {
+        for(uint i = 0; i &lt; 100; i++){
+            address(this).call(abi.encodeWithSignature("asdf2(uint256)", i));
+        }
+    }
+
+    function asdf2(uint256 num) internal returns (bool) {
+        bool checkk;
+        checkk = am.bet(num);
+        if (checkk == true) {
+            return true;
+        } else {
+            revert();
+        }
+    }
+}
+</pre></td></tr></tbody></table></code></div></div>
+<p>after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. because  it’s always reverted so i was not able to keep playing.</p>
+
+<p><a href="https://media.discordapp.net/attachments/1324169819637022723/1333987974991319080/2025-01-29_11.31.45.png?ex=679ae49d&amp;is=6799931d&amp;hm=c3093ab8ac0909d600eda04f2c2f80b19924b41a5cef235ec2b39c0f5aef2a96&amp;=&amp;format=webp&amp;quality=lossless&amp;width=2098&amp;height=516" class="popup img-link  shimmer"><img src="https://media.discordapp.net/attachments/1324169819637022723/1333987974991319080/2025-01-29_11.31.45.png?ex=679ae49d&amp;is=6799931d&amp;hm=c3093ab8ac0909d600eda04f2c2f80b19924b41a5cef235ec2b39c0f5aef2a96&amp;=&amp;format=webp&amp;quality=lossless&amp;width=2098&amp;height=516" alt="" loading="lazy"></a>
+he says if we call some function with the <code class="language-plaintext highlighter-rouge">.call()</code> function, only the transaction performed through <code class="language-plaintext highlighter-rouge">.call()</code> function is reverted.. so i wrote test code as above, when i called the <code class="language-plaintext highlighter-rouge">asdf1()</code> function, it was reverted before transaction was performed but when i call the <code class="language-plaintext highlighter-rouge">asdf11()</code> it was just reverted the transaction which performed via <code class="language-plaintext highlighter-rouge">.call()</code> function. so we can just exploit with this trick to get winning.</p>
+
+<p>i feel again that it is always very important to know the specifications of the system like EVM or smth else, i still have a lot to learn</p>
 
   </div>
 
