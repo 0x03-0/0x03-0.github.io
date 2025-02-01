@@ -923,7 +923,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4924 words"
+  title="4888 words"
 >
   <em>27 min</em> read</span>
 
@@ -2528,10 +2528,8 @@ contract Callllll {
     }
 }
 </pre></td></tr></tbody></table></code></div></div>
-<p>after few days, i’ve asked to snwo how i can make that my contract keep playing the game even i lose it. because  it’s always reverted so i was not able to keep playing.</p>
-
 <p><a href="/assets/img/2025/remedyCTF/image5.png" class="popup img-link  shimmer"><img src="/assets/img/2025/remedyCTF/image5.png" alt="" loading="lazy"></a>
-he says if we call some function with the <code class="language-plaintext highlighter-rouge">.call()</code> function, only the transaction performed through <code class="language-plaintext highlighter-rouge">.call()</code> function is reverted.. so i wrote test code as above, when i called the <code class="language-plaintext highlighter-rouge">asdf1()</code> function, it was reverted before transaction was performed but when i call the <code class="language-plaintext highlighter-rouge">asdf11()</code> it was just reverted the transaction which performed via <code class="language-plaintext highlighter-rouge">.call()</code> function. so we can just exploit with this trick to get winning.</p>
+if we call some function with the <code class="language-plaintext highlighter-rouge">.call()</code> function, only the transaction performed through <code class="language-plaintext highlighter-rouge">.call()</code> function is reverted.. so i wrote test code as above, when i called the <code class="language-plaintext highlighter-rouge">asdf1()</code> function, it was reverted before transaction was performed but when i call the <code class="language-plaintext highlighter-rouge">asdf11()</code> it was just reverted the transaction which performed via <code class="language-plaintext highlighter-rouge">.call()</code> function. so we can just exploit with this trick to get winning.</p>
 
 <h3 id="solvesol-2"><span class="me-2">Solve.sol</span><a href="#solvesol-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
