@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-01T23:15:07+09:00</updated>
+  <updated>2025-02-19T23:30:19+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,49 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Audit Contest - I (Next Generation, IQ AI, RAAC, Gamma, Rova Protocol)</title>
+    <link href="http://localhost:4000/posts/Audit-Feb/" rel="alternate" type="text/html" title="Audit Contest - I (Next Generation, IQ AI, RAAC, Gamma, Rova Protocol)" />
+    <published>2025-02-19T00:00:00+09:00</published>
+  
+    <updated>2025-02-19T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Audit-Feb/</id>
+    <content src="http://localhost:4000/posts/Audit-Feb/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="Audit Contest" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Overview
+in february, i participated in an evm audit contest for the first time. i analyzed c4’s next generation, the iq ai contest, cyfrin’s raac, gamma, and sherlock’s rova protocol and from march, i have to focus on company projects, so i will only concentrate on 2-3 audits per month
+
+
+  Next Generation
+    
+      Signature replayable across multiple chaines (Low) [link]
+    
+  
+  RAAC (Upda...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,46 +243,6 @@ contract Challenge {
     constructor(address bridge, address messenger, address weth) {
         BRIDGE = bridge;
         MESSEN...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>BMW Web3 CTF</title>
-    <link href="http://localhost:4000/posts/BMW-CTF/" rel="alternate" type="text/html" title="BMW Web3 CTF" />
-    <published>2024-01-03T00:00:00+09:00</published>
-  
-    <updated>2024-01-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/BMW-CTF/</id>
-    <content src="http://localhost:4000/posts/BMW-CTF/" />
-    <author>
-      <name>anonymous</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      개요
-
-
-  Introduction
-안녕하세요. BMW는 Break My Wall의 약자로 나의 벽을 깨부순다는 의미입니다. 나의 한계를 극복함과 동시에 우리가 WEB3 생태계의 진입장벽을 부수자는 의미를 함축하고 있습니다. BMW는 KITRI 차세대 보안리더 양성 프로그램 WHS 1기 프로젝트팀이며, WEB3의 취약점을 연구하고 워게임 사이트를 제작하는 프로젝트 주제로 활동하고 있습니다.
-CTF Purpose
-암호화폐, 코인과 같은 블록체인 기술을 기반으로 하는 디지털 화폐가 대중성을 갖게 되며, 자연스레 블록체인 보안성의 중요성이 강조되고 있습니다. 블록체인은 투명성과 분산성, 탈중앙화라는 특성을 기반으로 두기에 기존의 Web 2.0보다 강한 보안성이 보장되지만, 그럼에도 불구하고 블록체인의 세계에...
     </summary>
   
 
