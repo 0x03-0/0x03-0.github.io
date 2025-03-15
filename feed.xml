@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-20T05:14:20+09:00</updated>
+  <updated>2025-03-15T21:49:32+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -17,53 +17,6 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
-
-  
-  <entry>
-    <title>Audit Contest - I (Code4rena, Cyfrin, Sherlock)</title>
-    <link href="http://localhost:4000/posts/Audit-Feb/" rel="alternate" type="text/html" title="Audit Contest - I (Code4rena, Cyfrin, Sherlock)" />
-    <published>2025-02-19T00:00:00+09:00</published>
-  
-    <updated>2025-02-19T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Audit-Feb/</id>
-    <content src="http://localhost:4000/posts/Audit-Feb/" />
-    <author>
-      <name>anonymous</name>
-    </author>
-
-  
-    
-    <category term="Audit Contest" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Overview
-
-
-  Next Generation
-    
-      Signature replayable across multiple chaines (Low) [link]
-    
-  
-  RAAC (soon)
-  Gamma (soon)
-  Rova Protocol (With PoC) // unfortunately, this is vulnerability but it’s very difficult to exploit, so it’s considered invalid…
-    
-      Drain of funds in the Rova protocol due to refunds being sent to an incorret address (High) [link]
-      Unauthorized Ca...
-    </summary>
-  
-
-  </entry>
 
   
   <entry>
@@ -149,6 +102,59 @@ Diamoand Heist
 Flashloan.sol
 
 // SPDX-License-Iden...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Ethernaut Write Ups</title>
+    <link href="http://localhost:4000/posts/ethernaut/" rel="alternate" type="text/html" title="Ethernaut Write Ups" />
+    <published>2025-01-16T00:00:00+09:00</published>
+  
+    <updated>2025-01-16T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ethernaut/</id>
+    <content src="http://localhost:4000/posts/ethernaut/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="Wargame" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      개요
+
+
+
+1년동안 안 하다가 다시 시작했다. 올해 목표 중 하나가 컨트랙트 취약점 제보해서 바운티 받는 것.
+
+Fallback
+
+use std::str::FromStr;
+use secp256k1::SecretKey;
+use web3::{
+    contract::{Contract, Options},
+    types::{Address, TransactionParameters},
+    signing::SecretKeyRef,
+    ethabi::ethereum_types::U256,
+};
+
+#[tokio::main]
+async fn main() -&amp;gt; web3::Result&amp;lt;()&amp;gt; {
+    let http = web3::transports::Http::new("https://eth-...
     </summary>
   
 
