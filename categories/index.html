@@ -43,11 +43,11 @@
 <meta property="og:url" content="http://localhost:4000/categories/" />
 <meta property="og:site_name" content="Web3.0" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-03-20T18:21:44+09:00" />
+<meta property="article:published_time" content="2025-03-20T19:10:03+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-20T18:21:44+09:00","datePublished":"2025-03-20T18:21:44+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-20T19:10:03+09:00","datePublished":"2025-03-20T19:10:03+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -110,10 +110,317 @@
   <!-- JavaScript -->
 
   
+  <style>
+.core-app-profile--audithistory--auditwrapper {
+    border: 1px solid var(--color__border-l1);
+    border-radius: 4px;
+    background-color: var(--color__bg-l1);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    cursor: pointer
+}
+
+:root,:root.dark {
+    --color__label-red: #ed2360;
+    --color__label-yellow: #ffd330;
+    --color__label-green: #17a05a;
+    --color__label-blue: #2d20e2;
+    --color__label-purple: #7549ff;
+    --color__label-cyan: #18b4f8;
+    --color__text-primary: #e6e6e6;
+    --color__text-secondary: #adabb2;
+    --color__text-tertiary: #8d8a99;
+    --color__text-disabled: #6b6680;
+    --color__text-yellow: #ffe878;
+    --color__text-destructive: #ff6a8c;
+    --color__text-primary-inv: #3f3c4f;
+    --color__bg-l0: #1a1825;
+    --color__bg-l1: #22202d;
+    --color__bg-l2: #2e2b3b;
+    --color__bg-l3: #3a3649;
+    --color__bg-sidebar: #22202d;
+    --color__bg-main: #1a1825;
+    --color__bg-hover-l0: #1e1c2b;
+    --color__bg-hover-l1: #272432;
+    --color__bg-hover-l2: #332f41;
+    --color__bg-l0-inv: #fff;
+    --color__border-l0: #322f3f;
+    --color__border-l1: #322f3f;
+    --color__border-l2: #403c4d;
+    --color__border-l3: #4f4c5f;
+    --color__border-tertiary: rgba(208,204,255,.059);
+    --color__overlay: #110f19;
+    --font-size__header-xl: 1.625rem;
+    --font-size__header-lg: 1.5rem;
+    --font-size__header-md: 1.375rem;
+    --font-size__header-sm: 1.25rem;
+    --font-size__core-copy: 1.125rem;
+    --font-size__lg: 1.063rem;
+    --font-size__md: 0.938rem;
+    --font-size__sm: 0.813rem;
+    --color__alert-warning-text: #ebfcff;
+    --color__alert-warning-text-secondary: #a1e6ff;
+    --color__alert-warning-bg: #052947;
+    --color__alert-warning-border: #085f96;
+    --color__alert-error-text: #fff0f2;
+    --color__alert-error-text-secondary: #ffcbd5;
+    --color__alert-error-bg: #650126;
+    --color__alert-error-border: #c70948
+}
+@media(prefers-reduced-motion:no-preference) {
+    a {
+        transition: color .2s ease-in-out
+    }
+}
+.core-app-profile__bodybottom {
+	width:100%;
+	order:3;
+	display:flex;
+	flex-direction:column;
+	gap:2rem
+}
+
+.profile--audithistory--loadmore {
+	text-align:center
+}
+.profile--audithistory--loadmore hr {
+	height:2px;
+	background:#7549ff
+}
+.profile--audithistory--loadmore button {
+	color:#fff;
+	font-size:16px;
+	width:max-content;
+	margin:5px auto;
+	display:flex;
+	flex-direction:row;
+	gap:5px;
+	justify-content:center;
+	align-items:center;
+	cursor:pointer
+}
+.profile--audithistory--loadmore button svg {
+	width:16px;
+	height:16px
+}
+.profile--audithistory--loadmore button svg path {
+	fill:#7549ff
+}
+.profile--audithistory--loadmore .audithistory--unavailable {
+	margin-top:1rem;
+	border:2px solid #2e2b3b;
+	border-radius:.25rem;
+	padding:1rem
+}
+.profile--audithistory--loadmore .audithistory--unavailable p {
+	font-size:.875rem;
+	line-height:1.125rem;
+	text-align:start
+}
+.profile--audithistory--loadmore .audithistory--unavailable p strong {
+	color:#fff
+}
+.profile--audithistory--auditsponsorimg {
+	min-width:50px;
+	min-height:50px;
+	max-width:50px;
+	max-height:50px;
+	border-radius:50%
+}
+.profile--audithistory--auditheading {
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	gap:14px;
+	left:-15px;
+	align-items:flex-end
+}
+.profile--audithistory--auditheading--date {
+	font-size:14px;
+	line-height:18px
+}
+.profile--audithistory--auditheading--title {
+	font-size:20px;
+	line-height:24px;
+	color:#fff
+}
+.profile--audithistory--monthwrapper {
+	margin-top:30px
+}
+.profile--audithistory--auditwrapper {
+	position:relative;
+	height:auto;
+	margin:10px 0 30px 15px
+}
+.profile--audithistory--heading {
+	display:flex;
+	flex-direction:row;
+	gap:10px;
+	align-items:center;
+	margin-bottom:25px
+}
+.profile--audithistory--heading p {
+	font-size:18px;
+	color:#fff;
+	white-space:nowrap
+}
+.profile--audithistory--heading hr {
+	border:1px solid #2e2b3b;
+	width:100%;
+	height:1px
+}
+.profile--auditseverity {
+	position:relative
+}
+.profile--auditseverity--lineconnector {
+	position:relative;
+	left:9px;
+	min-height:15px;
+	width:.5px;
+	background-color:#2e2b3b
+}
+.profile--auditseverity--lineconnector:last-of-type {
+	position:absolute;
+	bottom:0
+}
+.profile--auditseverity--ring {
+	width:25px;
+	height:25px;
+	border-radius:50%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:relative;
+	left:-3px
+}
+.profile--auditseverity--ring--inner {
+	border-radius:50%;
+	width:5px;
+	height:5px;
+	background:#fff
+}
+.profile--auditseverity--severity {
+	position:relative;
+	display:flex;
+	margin-left:45px;
+	top:-24px
+}
+.profile--auditseverity--severity--heading {
+	color:var(--color__text-primary)
+}
+.profile--auditseverity--severity--content {
+	margin-left:8px
+}
+.profile--auditseverity--severity--content--flexwrapper {
+	display:flex;
+	column-gap:8px;
+	row-gap:5px;
+	align-items:center;
+	flex-wrap:wrap;
+	margin-bottom:5px
+}
+.profile--auditseverity--severity--decorator {
+	min-width:4px;
+	max-width:4px;
+	height:auto
+}
+.profile--auditseverity--severity--locked {
+	font-size:12px;
+	display:flex;
+	gap:5px;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center
+}
+.profile--auditseverity--severity--title {
+	color:#fff;
+	font-weight:semibold;
+	overflow-wrap:anywhere
+}
+.core-app-profile--audithistory--monthwrapper {
+	margin-top:40px;
+	display:flex;
+	flex-direction:column;
+	gap:1rem
+}
+.core-app-profile--audithistory--monthwrapper:first-child {
+	margin-top:0
+}
+.core-app-profile--audithistory--heading {
+	display:flex;
+	flex-direction:row;
+	gap:10px;
+	align-items:center;
+	justify-content:space-between;
+	font-size:var(--font-size__header-md);
+	color:var(--color__text-primary)
+}
+.core-app-profile--audithistory--auditwrapper {
+	border:1px solid var(--color__border-l1);
+	border-radius:4px;
+	background-color:var(--color__bg-l1);
+	display:flex;
+	flex-direction:column;
+	padding:1rem;
+	cursor:pointer
+}
+.core-app-profile--audithistory--heading {
+	display:flex;
+	flex-direction:row;
+	gap:10px;
+	align-items:center;
+	justify-content:space-between;
+	font-size:var(--font-size__header-md);
+	color:var(--color__text-primary)
+}
+.core-app-profile--audithistory--auditheading {
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	gap:14px;
+	align-items:center;
+	justify-content:space-between
+}
+.core-app-profile--audithistory--content-wrapper {
+	flex:1 1;
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	gap:14px
+}
+@media(min-width:450px) {
+	.core-app-profile--audithistory--content-wrapper {
+		flex-direction:row;
+		align-items:center;
+		justify-content:space-between
+	}
+}
+.core-app-profile--audithistory--header-wrapper {
+	display:flex;
+	flex-direction:row;
+	gap:14px;
+	align-items:center
+}
+.core-app-profile--audithistory--title {
+	font-size:20px;
+	line-height:24px;
+	font-weight:700;
+	color:var(--color__text-primary)
+}
+.core-app-profile--audithistory--date {
+  text-overflow:ellipsis
+	white-space:nowrap
+}
+.core-app-profile--audithistory--wrapper {
+	display:flex;
+	flex-direction:column-reverse;
+	height:100%
+}
+  </style>
 
   <!-- A placeholder to allow defining custom metadata -->
 
-   <link rel="stylesheet" href="https://code4rena.com/_next/static/css/c7bc3a1b33156090.css">
   <script src="https://code4rena.com/_next/static/chunks/app/%5B@username%5D/page-20c23029062acd7f.js"></script>
 </head>
 
