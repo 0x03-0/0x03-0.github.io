@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-04-11T04:49:24+09:00</updated>
+  <updated>2025-04-14T02:05:31+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,55 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>OnlyPwner (ALL OR NOTHING/LIQUID STAKING) Write Ups</title>
+    <link href="http://localhost:4000/posts/onlypwn/" rel="alternate" type="text/html" title="OnlyPwner (ALL OR NOTHING/LIQUID STAKING) Write Ups" />
+    <published>2025-04-14T00:00:00+09:00</published>
+  
+    <updated>2025-04-14T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/onlypwn/</id>
+    <content src="http://localhost:4000/posts/onlypwn/" />
+    <author>
+      <name>anonymous</name>
+    </author>
+
+  
+    
+    <category term="Wargame" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Summary
+
+
+
+i tried to solve it(all or nothing/liquid staking) a year ago, but i couldn’t. since then, i’ve been gaining experience to try again. and finally i solved it today haha. i will update more soon
+
+
+ALL OR NOTHING
+
+        if (allOrNothing.balance == 0) {
+            console.log("is-solved:true");
+        } else {
+            console.log("is-solved:false");
+        }
+
+we should drain as...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,46 +249,6 @@ contract Challenge {
     constructor(address bridge, address messenger, address weth) {
         BRIDGE = bridge;
         MESSEN...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>BMW Web3 CTF</title>
-    <link href="http://localhost:4000/posts/BMW-CTF/" rel="alternate" type="text/html" title="BMW Web3 CTF" />
-    <published>2024-01-03T00:00:00+09:00</published>
-  
-    <updated>2024-01-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/BMW-CTF/</id>
-    <content src="http://localhost:4000/posts/BMW-CTF/" />
-    <author>
-      <name>anonymous</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      개요
-
-
-  Introduction
-안녕하세요. BMW는 Break My Wall의 약자로 나의 벽을 깨부순다는 의미입니다. 나의 한계를 극복함과 동시에 우리가 WEB3 생태계의 진입장벽을 부수자는 의미를 함축하고 있습니다. BMW는 KITRI 차세대 보안리더 양성 프로그램 WHS 1기 프로젝트팀이며, WEB3의 취약점을 연구하고 워게임 사이트를 제작하는 프로젝트 주제로 활동하고 있습니다.
-CTF Purpose
-암호화폐, 코인과 같은 블록체인 기술을 기반으로 하는 디지털 화폐가 대중성을 갖게 되며, 자연스레 블록체인 보안성의 중요성이 강조되고 있습니다. 블록체인은 투명성과 분산성, 탈중앙화라는 특성을 기반으로 두기에 기존의 Web 2.0보다 강한 보안성이 보장되지만, 그럼에도 불구하고 블록체인의 세계에...
     </summary>
   
 
