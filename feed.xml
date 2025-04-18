@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Web3.0</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-04-14T02:23:10+09:00</updated>
+  <updated>2025-04-19T01:30:52+09:00</updated>
   <author>
     <name>anonymous</name>
     <uri>http://localhost:4000/</uri>
@@ -46,14 +46,7 @@
 
 
 
-      Summary
-
-
-
-i tried to solve it(all or nothing/liquid staking) a year ago, but i couldn’t. since then, i’ve been gaining experience to try again. and finally i solved it today haha. i will update more soon
-
-
-ALL OR NOTHING
+      ALL OR NOTHING
 
         if (allOrNothing.balance == 0) {
             console.log("is-solved:true");
@@ -61,7 +54,12 @@ ALL OR NOTHING
             console.log("is-solved:false");
         }
 
-we should drain as...
+we should drain assets of allOrNothing it to solve
+
+        AllOrNothing allOrNothing = new AllOrNothing(1 ether, 10 minutes);
+
+        allOrNothing.bet{value: 1 ether}(1, address(uint160(user) + 1));
+        allOrNothing.bet...
     </summary>
   
 
